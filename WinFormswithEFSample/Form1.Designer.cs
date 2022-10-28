@@ -34,20 +34,19 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnSave = new System.Windows.Forms.Button();
-            this.productsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productsBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.productIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryIdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCategories)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewCategories
@@ -58,7 +57,7 @@
             this.categoryIdDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn});
             this.dataGridViewCategories.DataSource = this.categoryBindingSource;
-            this.dataGridViewCategories.Location = new System.Drawing.Point(37, 50);
+            this.dataGridViewCategories.Location = new System.Drawing.Point(37, 34);
             this.dataGridViewCategories.Name = "dataGridViewCategories";
             this.dataGridViewCategories.RowTemplate.Height = 25;
             this.dataGridViewCategories.Size = new System.Drawing.Size(336, 250);
@@ -93,37 +92,12 @@
             this.categoryIdDataGridViewTextBoxColumn1,
             this.categoryDataGridViewTextBoxColumn});
             this.dataGridViewProducts.DataSource = this.productsBindingSource;
-            this.dataGridViewProducts.Location = new System.Drawing.Point(396, 50);
+            this.dataGridViewProducts.Location = new System.Drawing.Point(413, 34);
             this.dataGridViewProducts.Name = "dataGridViewProducts";
             this.dataGridViewProducts.RowTemplate.Height = 25;
             this.dataGridViewProducts.Size = new System.Drawing.Size(325, 250);
             this.dataGridViewProducts.TabIndex = 1;
             this.dataGridViewProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewProducts_CellContentClick);
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "Products";
-            this.productsBindingSource.DataSource = this.categoryBindingSource;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(646, 379);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 2;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // productsBindingSource1
-            // 
-            this.productsBindingSource1.DataMember = "Products";
-            this.productsBindingSource1.DataSource = this.categoryBindingSource;
-            // 
-            // productsBindingSource2
-            // 
-            this.productsBindingSource2.DataMember = "Products";
-            this.productsBindingSource2.DataSource = this.categoryBindingSource;
             // 
             // productIdDataGridViewTextBoxColumn
             // 
@@ -149,11 +123,55 @@
             this.categoryDataGridViewTextBoxColumn.HeaderText = "Category";
             this.categoryDataGridViewTextBoxColumn.Name = "categoryDataGridViewTextBoxColumn";
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "Products";
+            this.productsBindingSource.DataSource = this.categoryBindingSource;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(646, 327);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 2;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(37, 355);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "upload";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(37, 404);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "load";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(138, 355);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(194, 23);
+            this.comboBox1.TabIndex = 5;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(834, 564);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.dataGridViewProducts);
             this.Controls.Add(this.dataGridViewCategories);
@@ -163,8 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -182,7 +198,8 @@
         private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn categoryDataGridViewTextBoxColumn;
-        private BindingSource productsBindingSource1;
-        private BindingSource productsBindingSource2;
+        private Button button1;
+        private Button button2;
+        private ComboBox comboBox1;
     }
 }

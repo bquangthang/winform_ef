@@ -5,6 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.IO;
+using Newtonsoft.Json;
+
 namespace WinFormswithEFSample.models
 {
     public class ProductsContext : DbContext
@@ -13,7 +16,25 @@ namespace WinFormswithEFSample.models
         public DbSet<Category> Categories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-            => optionsBuilder.UseSqlServer("data source=BQUANGTHANG;initial catalog=winform_ef2;trusted_connection=true");
+        //=> optionsBuilder.UseSqlServer("data source=BQUANGTHANG;initial catalog=winform_ef2;trusted_connection=true");
+
+        {
+            string connectionString = "";
+
+            using (StreamReader sr = new StreamReader("env.json"))
+            {
+                string content = sr.ReadToEnd();
+                var obj = JsonConvert.DeserializeObject<Dictionary<string, object>>(content);
+                if(obj != null)
+                {
+                    connectionString = obj["sqlConnection"].ToString();
+
+                }
+
+            }
+
+            optionsBuilder.UseSqlServer(connectionString);
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
